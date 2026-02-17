@@ -21,8 +21,9 @@ public class test_one extends TestBase {
             $("#genterWrapper").$(byText("Female")).click();
             $("#userNumber").setValue("2566587452");
             $("#dateOfBirthInput").click();
-            $("#dateOfBirthInput").clear();
-            $("#dateOfBirthInput").sendKeys("17 Feb 2026");
+            $(".react-datepicker__month-select").selectOption("February");
+            $(".react-datepicker__year-select").selectOption("2026");
+            $(".react-datepicker__day--017").click();
             $("#subjects-label").setValue("test");
             $("#uploadPicture").uploadFromClasspath("resources/pic_2.jpg");
             $("#hobbiesWrapper").$(byText("Music")).click();
@@ -36,7 +37,7 @@ public class test_one extends TestBase {
             $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("ksenia mal"));
             $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("msl@t.ru"));
             $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female"));
-            $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("2569854785"));
+            $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("2566587452"));
             $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("17 Feb 2026"));
             $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("test"));
             $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
