@@ -4,10 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
-public class test_one extends TestBase {
+public class TestOne extends TestBase {
       @Test
       void successfulFillFormTest() {
             open("/automation-practice-form");
@@ -19,9 +18,8 @@ public class test_one extends TestBase {
             $("#dateOfBirthInput").click();
             $(".react-datepicker__month-select").selectOption("February");
             $(".react-datepicker__year-select").selectOption("2026");
-            $(".react-datepicker__day--017").click();
             $("#subjects-label").setValue("test");
-            $("#uploadPicture").uploadFromClasspath("resources/pic_2.jpg");
+            $("#uploadPicture").uploadFromClasspath("pic_2.jpg");
             $("#hobbiesWrapper").$(byText("Music")).click();
             $("#state").click();
             $(byText("NCR")).click();
@@ -29,7 +27,7 @@ public class test_one extends TestBase {
             $(byText("Noida")).click();
             $("#submit").click();
 
-            $("example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+            $(".modal-content").shouldHave(text("Thanks for submitting the form"));
             $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("ksenia mal"));
             $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("msl@t.ru"));
             $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female"));
@@ -43,7 +41,9 @@ public class test_one extends TestBase {
 
       @Test
       void simpleTest() {
-
+            open("");
+            $$(".card-body").findBy(text("Forms")).click();
+            $$(".router-link").findBy(text("Practice Form")).click();
                   $("#firstName").setValue("ksenia");
                   $("#lastName").setValue("mal");
                   $("#genterWrapper").$(byText("Female")).click();

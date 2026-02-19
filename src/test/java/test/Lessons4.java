@@ -1,6 +1,5 @@
 package test;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -10,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static testData.TestData.*;
 
 
-public class lessons_4 extends TestBase {
+public class Lessons4 extends TestBase {
 
     @Test
     void successfulFillFormTest() {
@@ -24,7 +23,7 @@ public class lessons_4 extends TestBase {
         $(".react-datepicker__month-select").selectOption("February");
         $(".react-datepicker__year-select").selectOption("2026");
         $(".react-datepicker__day--017").click();
-        $("#subjects-label").setValue("test");
+        $("#subjects-label").setValue(subjectsLabel);
         $("#uploadPicture").uploadFromClasspath("resources/pic_2.jpg");
         $("#hobbiesWrapper").$(byText("Music")).click();
         $("#state").click();
@@ -45,16 +44,4 @@ public class lessons_4 extends TestBase {
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Noida"));
     }
 
-    @Test
-    void simpleTest() {
-
-        $("#firstName").setValue(firstName);
-        $("#lastName").setValue(lastName);
-        $("#genterWrapper").$(byText("Female")).click();
-        $("#userNumber").setValue(userNumber);
-        $("#dateOfBirthInput").setValue("17 Feb 2026");
-        $("#submit").click();
-
-        $(".modal-title").shouldHave(text("Thanks for submitting the form"));
-    }
 }
