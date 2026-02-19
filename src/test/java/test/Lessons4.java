@@ -24,7 +24,7 @@ public class Lessons4 extends TestBase {
         $(".react-datepicker__year-select").selectOption("2026");
         $(".react-datepicker__day--017").click();
         $("#subjects-label").setValue(subjectsLabel);
-        $("#uploadPicture").uploadFromClasspath("resources/pic_2.jpg");
+        $("#uploadPicture").uploadFromClasspath("pic_2.jpg");
         $("#hobbiesWrapper").$(byText("Music")).click();
         $("#state").click();
         $(byText("NCR")).click();
