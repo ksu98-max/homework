@@ -18,7 +18,9 @@ public class TestOne extends TestBase {
             $("#dateOfBirthInput").click();
             $(".react-datepicker__month-select").selectOption("February");
             $(".react-datepicker__year-select").selectOption("2026");
-            $("#subjects-label").setValue("test");
+            $$(".react-datepicker__day").findBy(text("17")).click();
+            $("#subjectsInput").setValue("test");
+            $("#subjectsInput").pressEnter();
             $("#uploadPicture").uploadFromClasspath("pic_2.jpg");
             $("#hobbiesWrapper").$(byText("Music")).click();
             $("#state").click();
