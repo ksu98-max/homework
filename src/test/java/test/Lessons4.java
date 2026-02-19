@@ -38,7 +38,7 @@ public class Lessons4 extends TestBase {
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female"));
         $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text(userNumber));
         $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("17 Feb 2026"));
-        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("test"));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text(subjectsLabel));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("pic_2.jpg"));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Noida"));
