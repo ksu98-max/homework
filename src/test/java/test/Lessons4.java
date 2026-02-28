@@ -10,7 +10,6 @@ import static testData.TestData.*;
 
 
 public class Lessons4 extends TestBase {
-
     @Test
     void successfulFillFormTest() {
         open("/automation-practice-form");
@@ -23,7 +22,7 @@ public class Lessons4 extends TestBase {
         $(".react-datepicker__month-select").selectOption("Feb");
         $(".react-datepicker__year-select").selectOption("2026");
         $(".react-datepicker__day--017").click();
-        $("#subjects-label").setValue(subjectsLabel);
+        $("#subjectsInput").setValue("English").pressEnter();
         $("#uploadPicture").uploadFromClasspath("pic_2.jpg");
         $("#hobbiesWrapper").$(byText("Music")).click();
         $("#currentAddress").setValue(currentAddress).pressEnter();
@@ -39,10 +38,10 @@ public class Lessons4 extends TestBase {
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female"));
         $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text(userNumber));
         $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("17 Feb 2026"));
-        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text(subjectsLabel));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("English"));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("pic_2.jpg"));
-        $(".table-responsive")$(byText("currentAddress")).parent().shouldHave(text(currentAddress));
+        $(".table-responsive").$(byText("currentAddress")).parent().shouldHave(text(currentAddress));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Noida"));
     }
 

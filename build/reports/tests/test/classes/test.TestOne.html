@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">20.783s</div>
+<div class="counter">5.773s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,73 +61,12 @@
 <div class="tab-container">
 <ul class="tabLinks">
 <li>
-<a href="#">Failed tests</a>
-</li>
-<li>
 <a href="#">Tests</a>
 </li>
 <li>
 <a href="#">Standard error</a>
 </li>
 </ul>
-<div class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="successfulFillFormTest()"></a>
-<h3 class="failures">successfulFillFormTest()</h3>
-<span class="code">
-<pre>Element not found {#firstName}
-Expected: editable
-Page source: file:/C:/Users/user/IdeaProjects/homework/build/reports/tests/1771500694986.0.html
-Timeout: 4s
-Caused by: NoSuchWindowException: no such window: target window already closed
-	at app//com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:89)
-	at app//com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:129)
-	at app//com.codeborne.selenide.impl.WebElementSource.handleError(WebElementSource.java:140)
-	at app//com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:123)
-	at app//com.codeborne.selenide.impl.WebElementSource.findAndAssertElementIsEditable(WebElementSource.java:178)
-	at app//com.codeborne.selenide.commands.SetValue.setValueForTextInput(SetValue.java:52)
-	at app//com.codeborne.selenide.commands.SetValue.execute(SetValue.java:38)
-	at app//com.codeborne.selenide.FluentCommand.execute(FluentCommand.java:27)
-	at app//com.codeborne.selenide.FluentCommand.execute(FluentCommand.java:19)
-	at app//com.codeborne.selenide.commands.Commands.execute(Commands.java:161)
-	at app//com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:138)
-	at app//com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:90)
-	at app/jdk.proxy3/jdk.proxy3.$Proxy14.setValue(Unknown Source)
-	at app//test.TestOne.successfulFillFormTest(TestOne.java:13)
-	at java.base@17.0.12/java.lang.reflect.Method.invoke(Method.java:568)
-	at java.base@17.0.12/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base@17.0.12/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=145.0.7632.77)
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4463c6fc797276a6b17347c412c34d52, findElement {using=css selector, value=#firstName}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.77, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52262}, goog:processID: 8816, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52262/devtoo..., se:cdpVersion: 145.0.7632.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4463c6fc797276a6b17347c412c34d52
-	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at app//org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
-	at app//org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
-	at app//com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:67)
-	at app//com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:38)
-	at app//com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:29)
-	at app//com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:113)
-	at app//com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:112)
-	... 13 more
-</pre>
-</span>
-</div>
-</div>
 <div class="tab">
 <h2>Tests</h2>
 <table>
@@ -139,9 +78,9 @@ Session ID: 4463c6fc797276a6b17347c412c34d52
 </tr>
 </thead>
 <tr>
-<td class="failures">successfulFillFormTest()</td>
-<td class="failures">20.783s</td>
-<td class="failures">failed</td>
+<td class="success">successfulFillFormTest()</td>
+<td class="success">5.773s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
@@ -151,7 +90,7 @@ Session ID: 4463c6fc797276a6b17347c412c34d52
 <pre>SLF4J(W): No SLF4J providers were found.
 SLF4J(W): Defaulting to no-operation (NOP) logger implementation
 SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
-февр. 19, 2026 2:31:15 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+февр. 28, 2026 9:55:51 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 145, returning the closest version; found: 144; Please update to a Selenium version that supports CDP version 145
 </pre>
 </span>
@@ -164,7 +103,7 @@ WARNING: Unable to find an exact match for CDP version 145, returning the closes
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.0.0</a> at 19 февр. 2026 г., 14:31:35</p>
+<a href="https://www.gradle.org">Gradle 9.0.0</a> at 28 февр. 2026 г., 21:55:56</p>
 </div>
 </div>
 </body>
