@@ -6,5 +6,5 @@ public class TestData {
             lastName = "mal",
             userEmail = "msl@t.ru",
             userNumber = "2566587452",
-            subjectsLabel = "test";
+            currentAddress = "Russia. Voronezh"
         }

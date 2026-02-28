@@ -16,13 +16,14 @@ public class TestOne extends TestBase {
             $("#genterWrapper").$(byText("Female")).click();
             $("#userNumber").setValue("2566587452");
             $("#dateOfBirthInput").click();
-            $(".react-datepicker__month-select").selectOption("February");
+            $(".react-datepicker__month-select").selectOption("Feb");
             $(".react-datepicker__year-select").selectOption("2026");
             $$(".react-datepicker__day").findBy(text("17")).click();
-            $("#subjectsInput").setValue("test");
+            $("#subjectsInput").setValue("English").pressEnter();
             $("#subjectsInput").pressEnter();
             $("#uploadPicture").uploadFromClasspath("pic_2.jpg");
             $("#hobbiesWrapper").$(byText("Music")).click();
+            $("#currentAddress").setValue("Russia. Voronezh").pressEnter();
             $("#state").click();
             $(byText("NCR")).click();
             $("#city").click();
@@ -38,6 +39,7 @@ public class TestOne extends TestBase {
             $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("test"));
             $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
             $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("pic_2.jpg"));
+            $(".table-responsive")$(byText("currentAddress")).parent().shouldHave(text("Russia. Voronezh"));
             $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Noida"));
       }
 

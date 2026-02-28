@@ -20,12 +20,13 @@ public class Lessons4 extends TestBase {
         $("#genterWrapper").$(byText("Female")).click();
         $("#userNumber").setValue(userNumber);
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("February");
+        $(".react-datepicker__month-select").selectOption("Feb");
         $(".react-datepicker__year-select").selectOption("2026");
         $(".react-datepicker__day--017").click();
         $("#subjects-label").setValue(subjectsLabel);
         $("#uploadPicture").uploadFromClasspath("pic_2.jpg");
         $("#hobbiesWrapper").$(byText("Music")).click();
+        $("#currentAddress").setValue(currentAddress).pressEnter();
         $("#state").click();
         $(byText("NCR")).click();
         $("#city").click();
@@ -33,7 +34,7 @@ public class Lessons4 extends TestBase {
         $("#submit").click();
 
         $("example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text(firstName+ lastName));
+        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text(firstName + " " + lastName));
         $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text(userEmail));
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female"));
         $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text(userNumber));
@@ -41,6 +42,7 @@ public class Lessons4 extends TestBase {
         $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text(subjectsLabel));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("pic_2.jpg"));
+        $(".table-responsive")$(byText("currentAddress")).parent().shouldHave(text(currentAddress));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Noida"));
     }
 
