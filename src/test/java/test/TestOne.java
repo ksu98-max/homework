@@ -57,4 +57,5 @@ public class TestOne extends TestBase {
 
                   $(".modal-title").shouldHave(text("Thanks for submitting the form"));
       }
-}
+
+     
