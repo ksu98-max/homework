@@ -1,6 +1,7 @@
 package test;
 
 import org.junit.jupiter.api.Test;
+import testData.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -11,6 +12,9 @@ public class SimpleTest extends TestBase {
     @Test
     void simpleTest() {
 
+        typeUserName(firstName);
+        typeLastName(lastName):
+
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#genterWrapper").$(byText("Female")).click();
@@ -19,5 +23,8 @@ public class SimpleTest extends TestBase {
         $("#submit").click();
 
         $(".modal-title").shouldHave(text("Thanks for submitting the form"));
+    }
+
+    private void typeUserName(String firstName) {
     }
 }
