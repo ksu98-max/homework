@@ -1,47 +1,42 @@
 package test;
 
 import org.junit.jupiter.api.Test;
+import pages.PracticeForm;
 import testData.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 import static testData.TestData.*;
 import static testData.TestData.currentAddress;
 
 public class Lessons5 extends TestBase {
+    PracticeForm practiceForm = new PracticeForm();
     @Test
-    void successfulFillFormTest() {
-        open("/automation-practice-form");
-        $("#firstName").setValue(firstName);
-        $("#lastName").setValue(lastName);
-        $("#userEmail").setValue(userEmail);
-        $("#genterWrapper").$(byText("Female")).click();
-        $("#userNumber").setValue(userNumber);
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("February");
-        $(".react-datepicker__year-select").selectOption("2026");
-        $$(".react-datepicker__day").findBy(text("17")).click();
-        $("#subjectsInput").setValue("English").pressEnter();
-        $("#hobbiesWrapper").$(byText("Music")).click();
-        $("#uploadPicture").uploadFromClasspath("pic_2.jpg");
-        $("#currentAddress").setValue(currentAddress).pressEnter();
-        $("#state").click();
-        $(byText("NCR")).click();
-        $("#city").click();
-        $(byText("Noida")).click();
-        $("#submit").click();
+    void simpleTest() {
+        practiceForm.openPage()
+                .typeFirstName(firstName)
+                .typeLastName(lastName)
+                .typeUserNumber(userNumber)
+                .setGender(gender)
+                .setDateOfBirght(day, month,year)
+                .typeSubjectSelect(language)
+                .submitHobbies(hobbies)
+                .file()
+                .typeCurrentAddress(currentAddress)
+                .typeState()
+                .SetStateValue(state)
+                .typeCity()
+                .SetCityValue(city)
+                .resultFormButton()
+                .CheckField();
 
-        $(".modal-content").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text(firstName + " " + lastName));
-        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text(userEmail));
-        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female"));
-        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text(userNumber));
-        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("17 February,2026"));
-        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("English"));
-        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
-        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("pic_2.jpg"));
-        $(".table-responsive").$(byText("Address")).parent().shouldHave(text(currentAddress));
-        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Noida"));
-    }}
+
+
+
+
+
+
+    }
+}
+

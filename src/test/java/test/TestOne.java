@@ -48,14 +48,15 @@ public class TestOne extends TestBase {
             open("");
             $$(".card-body").findBy(text("Forms")).click();
             $$(".router-link").findBy(text("Practice Form")).click();
-                  $("#firstName").setValue("ksenia");
-                  $("#lastName").setValue("mal");
-                  $("#genterWrapper").$(byText("Female")).click();
-                  $("#userNumber").setValue("2566587452");
-                  $("#dateOfBirthInput").setValue("17 Feb 2026");
-                  $("#submit").click();
+            $("#firstName").setValue("ksenia");
+            $("#lastName").setValue("mal");
+            $("#genterWrapper").$(byText("Female")).click();
+            $("#userNumber").setValue("2566587452");
+            $("#dateOfBirthInput").setValue("17 Feb 2026");
+            $("#submit").click();
 
-                  $(".modal-title").shouldHave(text("Thanks for submitting the form"));
+            $(".modal-title").shouldHave(text("Thanks for submitting the form"));
       }
+}
 
      
