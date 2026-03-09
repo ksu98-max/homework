@@ -35,6 +35,7 @@ public class PracticeForm {
     //action
     public PracticeForm openPage() {
         open("/automation-practice-form");
+        return this;
     }
 
     public PracticeForm typeFirstName(String value) {
