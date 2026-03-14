@@ -59,9 +59,9 @@ public class Lesson6 extends TestBase {
     void Test_with_utils() {
 
         String firstName = getRandomString(10);
-        String lastName
+        String lastName = getRandomString(10);
         String userEmail
-        String userNumber
+        String userNumber = getRandomString(10);
         String currentAddress
 //        String setDateOfBirght = faker.date()
 

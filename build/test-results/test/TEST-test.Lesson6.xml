@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.Lesson6" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-03-10T19:09:45.862Z" hostname="WIN-ITVORVR452R" time="27.979">
+  <properties/>
+  <testcase name="checkPracticeFormTest()" classname="test.Lesson6" time="24.792"/>
+  <testcase name="Test_with_faker()" classname="test.Lesson6" time="3.183"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+мар. 10, 2026 10:09:47 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 145, returning the closest version; found: 144; Please update to a Selenium version that supports CDP version 145
+]]></system-err>
+</testsuite>
