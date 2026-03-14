@@ -18,6 +18,7 @@ public class PracticeForm {
     //elements
     private SelenideElement firstNameInput = $("#firstName");
     private SelenideElement lastNameInput = $("#lastName");
+    private SelenideElement userEmailInput = $("#userEmail");
     private SelenideElement userNumberInput = $("#userNumber");
     private SelenideElement genderContainer = $("#genterWrapper");
     CalendarComponent calendar = new CalendarComponent();
@@ -48,6 +49,10 @@ return this;
     }
     public PracticeForm typeUserNumber(String value) {
         userNumberInput.setValue(value);
+        return this;
+    }
+    public PracticeForm typeUserEmai(String value) {
+        userEmailInput.setValue(value);
         return this;
     }
     public PracticeForm setGender(String value) {

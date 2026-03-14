@@ -1,7 +1,9 @@
 package testData;
 
+import com.github.javafaker.Faker;
+
 public class TestData {
-    // firstName = getRandomString(10);
+
    public static String firstName = "ksenia",
             lastName = "mal",
             userEmail = "msl@t.ru",
@@ -14,8 +16,9 @@ public class TestData {
             hobbies = "Music",
             language = "English",
             state = "NCR",
-            city="Noida"
+            city="Noida";
 
-
-    ;
         }
+
+
+
