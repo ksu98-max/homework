@@ -1,19 +1,15 @@
-package test;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import pages.PracticeForm;
-
-import static Utils.randomUtils.*;
-import static Utils.randomUtils.getRandomGender;
-import static Utils.randomUtils.getRandomHobbies;
-import static Utils.randomUtils.getRandomString;
-import static Utils.randomUtils.getRandomSubject;
-import static testData.TestData.*;
-
-//public class Lesons6_1 {
+//package test;
 //
+//import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.Test;
+//import pages.PracticeForm;
+//import static testData.TestData.*;
+//import static testData.TestData.city;
+//import static utils.RandomUtils.RandomUtils.*;
+//import static utils.RandomUtils.getRandomState;
 //
+//public class Lesons6v2 {
+//    PracticeForm practiceForm;
 //    String firstNameK;
 //    String lastNameK;
 //    String userEmailK;
@@ -22,11 +18,15 @@ import static testData.TestData.*;
 //    String genderK;
 //    String subjectK;
 //    String hobbies;
-////        String state;
-////        String day;
-//PracticeForm practiceForm = new PracticeForm();
+//    String state;
+//    String day;
+//    String month;
+//    String year;
+//    String city;
+//
 //    @BeforeEach
-//    void prepearRandomData(){
+//    void setUp() {
+//        practiceForm = new PracticeForm();
 //        firstNameK = getRandomString(10);
 //        lastNameK = getRandomString(10);
 //        userEmailK = getRandomEmail();
@@ -35,21 +35,24 @@ import static testData.TestData.*;
 //        genderK = getRandomGender();
 //        subjectK = getRandomSubject();
 //        hobbies = getRandomHobbies();
-////   state = getRandomState();
-////    day = getRandomDay
-//
+//        state = getRandomState();
+/// /        day = getRandomDay();
+/// /        month = getRandomMonth();
+/// /        year = getRandomYear();
+/// /        city = getRandomCity();
 //    }
+//
 //    @Test
-//    void Test_with_utils() {
-//
-//
+//    void testWithUtils() {
 //        practiceForm.openPage()
 //                .typeFirstName(firstNameK)
 //                .typeLastName(lastNameK)
 //                .typeUserEmai(userEmailK)
 //                .typeUserNumber(userNumberK)
 //                .setGender(genderK)
-//                .setDateOfBirght(day, month, year)
+//                .setMonthInput(month)
+//                .setYearInput(year)
+//                .setDayInput(day)
 //                .typeSubjectSelect(subjectK)
 //                .submitHobbies(hobbies)
 //                .file()
@@ -60,7 +63,5 @@ import static testData.TestData.*;
 //                .SetCityValue(city)
 //                .resultFormButton()
 //                .CheckField();
-//
 //    }
-//}
 //}
