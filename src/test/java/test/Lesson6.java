@@ -13,6 +13,7 @@ import static testData.TestData.*;
 import static testData.TestData.currentAddress;
 import static testData.TestData.firstName;
 import static testData.TestData.lastName;
+import static testData.TestData.userEmail;
 import static testData.TestData.userNumber;
 
 public class Lesson6 extends TestBase {
@@ -25,11 +26,11 @@ public class Lesson6 extends TestBase {
     @Test
     void Test_with_faker() {
 
-        String firstName = fakerRu.name().firstName();
-        String lastName = fakerRu.name().lastName();
-        String userEmail = faker.internet().emailAddress();
-        String userNumber = faker.numerify("##########");
-        String currentAddress = fakerRu.address().fullAddress();
+        String firstNameFaker = fakerRu.name().firstName();
+        String lastNameFaker = fakerRu.name().lastName();
+        String userEmailFaker = faker.internet().emailAddress();
+        String userNumberFaker = faker.numerify("##########");
+        String currentAddressFaker = fakerRu.address().fullAddress();
         String genderFaker = faker.options().option("Male", "Female", "Other");
         String dayFaker = String.valueOf(faker.number().numberBetween(1, 28));
         String monthFaker = faker.options().option("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
@@ -54,24 +55,26 @@ public class Lesson6 extends TestBase {
 
         practiceForm.openPage()
                 .removeBanners()
-                .typeFirstName(firstName)
-                .typeLastName(lastName)
-                .typeUserNumber(userNumber)
-                .setGender(gender)
-                .typeSubjectSelect(language)
-                .submitHobbies(hobbies)
+                .typeFirstName(firstNameFaker)
+                .typeLastName(lastNameFaker)
+                .typeUserNumber(userNumberFaker)
+                .typeUserEmai(userEmailFaker)
+                .setGender(genderFaker)
+                .typeSubjectSelect(languageFaker)
+                .submitHobbies(hobbiesFaker)
                 .uploadFile(testFileName)
-                .typeCurrentAddress(currentAddress)
+                .typeCurrentAddress(currentAddressFaker)
                 .typeState()
-                .SetStateValue(state)
+                .SetStateValue(stateFaker)
                 .typeCity()
-                .SetCityValue(city)
-                .resultFormButton();
-        calendarComponent.setMonthInput(month)
-                .setYearInput(year)
-                .setDayInput(day);
+                .SetCityValue(cityFaker);
+        calendarComponent.setMonthInput(monthFaker)
+                .setYearInput(yearFaker)
+                .setDayInput(dayFaker);
 
-        tableResultComponent.checkField();
+        tableResultComponent
+                .resultFormButton()
+                .checkField();
 
     }
 }

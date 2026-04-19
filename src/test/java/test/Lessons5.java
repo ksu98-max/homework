@@ -24,6 +24,7 @@ public class Lessons5 extends TestBase {
                 .typeFirstName(firstName)
                 .typeLastName(lastName)
                 .typeUserNumber(userNumber)
+                .typeUserEmai(userEmail)
                 .setGender(gender)
                 .typeSubjectSelect(language)
                 .submitHobbies(hobbies)
@@ -32,14 +33,14 @@ public class Lessons5 extends TestBase {
                 .typeState()
                 .SetStateValue(state)
                 .typeCity()
-                .SetCityValue(city)
-                .resultFormButton();
+                .SetCityValue(city);
         calendarComponent.setMonthInput(month)
                 .setYearInput(year)
                 .setDayInput(day);
 
-        tableResultComponent.checkField();
-
+        tableResultComponent
+                .resultFormButton()
+                .checkField();
     }
 }
 

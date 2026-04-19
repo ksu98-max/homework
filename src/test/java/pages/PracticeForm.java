@@ -21,7 +21,6 @@ public class PracticeForm {
     private SelenideElement userEmailInput = $("#userEmail");
     private SelenideElement userNumberInput = $("#userNumber");
     private SelenideElement genderContainer = $("#genterWrapper");
-//    CalendarComponent calendar = new CalendarComponent();
     private SelenideElement subjectInput = $("#subjectsInput");
     private SelenideElement hobbiesButton = $("#hobbiesWrapper");
     private SelenideElement fileToUpload = $("#uploadPicture");
@@ -30,7 +29,7 @@ public class PracticeForm {
     private SelenideElement stateInput = $("#state");
     private SelenideElement cityButton = $("#city");
     private SelenideElement cityInput = $("#city");
-    public SelenideElement resultFormButton = $("#submit");
+
 
     //action
     public PracticeForm openPage() {
@@ -115,9 +114,5 @@ public class PracticeForm {
         return this;
     }
 
-    public PracticeForm resultFormButton() {
-        resultFormButton.click();
-        return this;
-    }
 
 }
