@@ -3,6 +3,8 @@ package test;
 import org.junit.jupiter.api.Test;
 import pages.PracticeForm;
 //import pages.components.CalendarComponent;
+import pages.components.CalendarComponent;
+import pages.components.TableResultComponent;
 import testData.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
@@ -12,6 +14,8 @@ import static testData.TestData.currentAddress;
 
 public class Lessons5 extends TestBase {
     PracticeForm practiceForm = new PracticeForm();
+    CalendarComponent calendarComponent = new CalendarComponent();
+    TableResultComponent tableResultComponent = new TableResultComponent();
 
     @Test
     void simpleTest() {
@@ -21,9 +25,6 @@ public class Lessons5 extends TestBase {
                 .typeLastName(lastName)
                 .typeUserNumber(userNumber)
                 .setGender(gender)
-                .setMonthInput(month)
-                .setYearInput(year)
-                .setDayInput(day)
                 .typeSubjectSelect(language)
                 .submitHobbies(hobbies)
                 .uploadFile(testFileName)
@@ -32,8 +33,12 @@ public class Lessons5 extends TestBase {
                 .SetStateValue(state)
                 .typeCity()
                 .SetCityValue(city)
-                .resultFormButton()
-                .checkField();
+                .resultFormButton();
+        calendarComponent.setMonthInput(month)
+                .setYearInput(year)
+                .setDayInput(day);
+
+        tableResultComponent.checkField();
 
     }
 }

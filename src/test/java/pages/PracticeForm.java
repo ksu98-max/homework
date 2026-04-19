@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.components.CalendarComponent;
 //import pages.components.CalendarComponent;
 //import pages.components.CalendarComponent;
 
@@ -20,7 +21,7 @@ public class PracticeForm {
     private SelenideElement userEmailInput = $("#userEmail");
     private SelenideElement userNumberInput = $("#userNumber");
     private SelenideElement genderContainer = $("#genterWrapper");
-    //    CalendarComponent calendar = new CalendarComponent();
+//    CalendarComponent calendar = new CalendarComponent();
     private SelenideElement subjectInput = $("#subjectsInput");
     private SelenideElement hobbiesButton = $("#hobbiesWrapper");
     private SelenideElement fileToUpload = $("#uploadPicture");
@@ -30,36 +31,18 @@ public class PracticeForm {
     private SelenideElement cityButton = $("#city");
     private SelenideElement cityInput = $("#city");
     public SelenideElement resultFormButton = $("#submit");
-    public SelenideElement fieldResult = $(".modal-header");
-    private SelenideElement monthInput = $(".react-datepicker__month-select");
-    private SelenideElement yearInput = $(".react-datepicker__year-select");
-    private SelenideElement dayInput = $(".react-datepicker__day");
 
     //action
     public PracticeForm openPage() {
         open("/automation-practice-form");
         return this;
     }
+
     public PracticeForm removeBanners() {
         executeJavaScript("""
-            document.getElementById('fixedban')?.remove();
-            document.querySelector('footer')?.remove();
-        """);
-        return this;
-    }
-
-    public PracticeForm setMonthInput(String value) {
-        monthInput.selectOption(month);
-        return this;
-    }
-
-    public PracticeForm setYearInput(String value) {
-        yearInput.selectOption(year);
-        return this;
-    }
-
-    public PracticeForm setDayInput(String value) {
-        dayInput.$(byText(value)).click();
+                    document.getElementById('fixedban')?.remove();
+                    document.querySelector('footer')?.remove();
+                """);
         return this;
     }
 
@@ -137,8 +120,4 @@ public class PracticeForm {
         return this;
     }
 
-    public PracticeForm checkField() {
-        fieldResult.shouldHave(text("Thanks for submitting the form"));
-        return this;
-    }
 }

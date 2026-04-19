@@ -3,16 +3,24 @@ package test;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import pages.PracticeForm;
+import pages.components.CalendarComponent;
+import pages.components.TableResultComponent;
 import testData.TestBase;
 
 import java.util.Locale;
 
 import static testData.TestData.*;
+import static testData.TestData.currentAddress;
+import static testData.TestData.firstName;
+import static testData.TestData.lastName;
+import static testData.TestData.userNumber;
 
 public class Lesson6 extends TestBase {
     PracticeForm practiceForm = new PracticeForm();
     Faker faker = new Faker();
     Faker fakerRu = new Faker(new Locale("ru"));
+    CalendarComponent calendarComponent = new CalendarComponent();
+    TableResultComponent tableResultComponent = new TableResultComponent();
 
     @Test
     void Test_with_faker() {
@@ -48,21 +56,22 @@ public class Lesson6 extends TestBase {
                 .removeBanners()
                 .typeFirstName(firstName)
                 .typeLastName(lastName)
-                .typeUserEmai(userEmail)
                 .typeUserNumber(userNumber)
-                .setGender(genderFaker)
-                .setMonthInput(monthFaker)
-                .setYearInput(yearFaker)
-                .setDayInput(dayFaker)
-                .typeSubjectSelect(languageFaker)
-                .submitHobbies(hobbiesFaker)
+                .setGender(gender)
+                .typeSubjectSelect(language)
+                .submitHobbies(hobbies)
                 .uploadFile(testFileName)
                 .typeCurrentAddress(currentAddress)
                 .typeState()
-                .SetStateValue(stateFaker)
+                .SetStateValue(state)
                 .typeCity()
-                .SetCityValue(cityFaker)
-                .resultFormButton()
-                .checkField();
+                .SetCityValue(city)
+                .resultFormButton();
+        calendarComponent.setMonthInput(month)
+                .setYearInput(year)
+                .setDayInput(day);
+
+        tableResultComponent.checkField();
+
     }
 }
