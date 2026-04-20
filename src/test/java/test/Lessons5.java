@@ -34,7 +34,8 @@ public class Lessons5 extends TestBase {
                 .SetStateValue(state)
                 .typeCity()
                 .SetCityValue(city);
-        calendarComponent.setMonthInput(month)
+        calendarComponent.calendarClick()
+                .setMonthInput(month)
                 .setYearInput(year)
                 .setDayInput(day);
 

@@ -31,21 +31,14 @@ public class FakerComponent {
     public String generateState() {return faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan");}
 
     public String generateCity(String state) {
-        if (state.equals("NCR")) {
-            return faker.options().option("Delhi", "Gurgaon", "Noida");
-        }
-        if (state.equals("Uttar Pradesh")) {
-            return faker.options().option("Agra", "Lucknow", "Merrut");
-        }
-        if (state.equals("Haryana")) {
-            return faker.options().option("Karnal", "Panipat");
-        }
-        if (state.equals("Rajasthan")) {
-            return faker.options().option("Jaipur", "Jaselmer");
-        }
-        return "";
+        return switch (state) {
+            case "NCR" -> faker.options().option("Delhi", "Gurgaon", "Noida");
+            case "Uttar Pradesh" -> faker.options().option("Agra", "Lucknow", "Merrut");
+            case "Haryana" -> faker.options().option("Karnal", "Panipat");
+            case "Rajasthan" -> faker.options().option("Jaipur", "Jaselmer");
+            default -> "";
+        };
     }
-
     public String generateLanguage() {
         return faker.options().option("English", "Chemistry", "Arts", "Maths", "Biology",
                 "Hindi", "Physics", "Accounting");

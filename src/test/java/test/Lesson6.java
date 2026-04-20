@@ -47,7 +47,9 @@ public class Lesson6 extends TestBase {
                 .typeCity()
                 .SetCityValue(testData.getCityFaker());
 
-        calendarComponent.setMonthInput(testData.getMonthFaker())
+        calendarComponent
+                .calendarClick()
+                .setMonthInput(testData.getMonthFaker())
                 .setYearInput(testData.getYearFaker())
                 .setDayInput(testData.getDayFaker());
 
